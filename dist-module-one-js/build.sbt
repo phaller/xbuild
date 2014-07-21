@@ -1,4 +1,4 @@
-import dist.DistBuild
+import dist.{DistBuild, Dependencies}
 
 scalaJSSettings
 
@@ -12,4 +12,4 @@ ScalaJSKeys.persistLauncher := true
 
 ScalaJSKeys.persistLauncher in Test := false
 
-libraryDependencies += "org.scala-lang.modules.scalajs" %%% "scalajs-dom" % "0.6"
+libraryDependencies ++= Dependencies.moduleOneJS
