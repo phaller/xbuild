@@ -1,3 +1,5 @@
-import dist.DistBuild
+import dist.{DistBuild, Formatting}
 
 DistBuild.defaultSettings
+
+Formatting.formatSettings
