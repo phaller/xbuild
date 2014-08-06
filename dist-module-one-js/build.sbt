@@ -8,7 +8,7 @@ scalaJSSettings
 
 DistBuild.defaultSettings
 
-unmanagedSourceDirectories in Compile ++= (unmanagedSourceDirectories in Compile in DistBuild.moduleOne).value
+unmanagedSourceDirectories in Compile += baseDirectory.value / ".." / "dist-module-one" / "src" / "main" / "scala"
 
 excludeFilter in unmanagedSources := HiddenFileFilter || Exclude.excludeFromModuleOne
 
