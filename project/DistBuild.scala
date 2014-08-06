@@ -33,14 +33,4 @@ object DistBuild extends Build {
     scalacOptions in Compile ++= Seq("-encoding", "UTF-8", "-target:jvm-1.6", "-deprecation", "-feature", "-unchecked", "-Xlog-reflective-calls", "-Xlint")
   )
 
-  lazy val excludedFromModuleOne: Set[String] = Set(
-    "B.scala"
-  )
-
-  lazy val excludeFromModuleOne: FileFilter = new FileFilter {
-    def accept(pathname: File): Boolean = { // true if excluded
-      excludedFromModuleOne.exists(_ == pathname.getName)
-    }
-  }
-
 }

@@ -1,5 +1,7 @@
 import dist.DistBuild
 
+import dist.Exclude
+
 import scala.scalajs.sbtplugin.ScalaJSPlugin._ // import `%%%` extension method
 
 scalaJSSettings
@@ -8,7 +10,7 @@ DistBuild.defaultSettings
 
 unmanagedSourceDirectories in Compile ++= (unmanagedSourceDirectories in Compile in DistBuild.moduleOne).value
 
-excludeFilter in unmanagedSources := HiddenFileFilter || DistBuild.excludeFromModuleOne
+excludeFilter in unmanagedSources := HiddenFileFilter || Exclude.excludeFromModuleOne
 
 ScalaJSKeys.persistLauncher := true
 
